@@ -14,6 +14,8 @@ export const AuthOptions: NextAuthOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials: any): Promise<any> {
+
+        //  here the vars are accessible via credentials.identifier.email  credentials.identifier.password  
         try {
             // we need to connect to db while performing opterations because we need to check if the user is verified or not and also establisha  connection to db as Next is a Edge TIme Framework
           await dbConnect();

@@ -39,11 +39,9 @@ export async function POST(request: Request) {
             )
         }else{
             const hashedPassword =await bcrypt.hash(password, 10);
-
             existingUserWithEmail.password = hashedPassword;
             existingUserWithEmail.verifycode = verifycode;
             existingUserWithEmail.verifycodeExpiry = new Date(Date.now() + 3600000);
-
 
             await existingUserWithEmail.save();
         }
@@ -51,7 +49,7 @@ export async function POST(request: Request) {
 
 
     } else {
-      const hashedPassword = bcrypt.hash(password, 10);
+      const hashedPassword =await bcrypt.hash(password, 10);
 
       const expiryDate = new Date();
       expiryDate.setHours(expiryDate.getHours() + 1);
