@@ -1,7 +1,7 @@
 import dbConnect from "@/lib/dbConnect";
 import userModel from "@/model/User";
 import { getServerSession, User } from "next-auth";
-import { AuthOptions } from "../auth/[...nextAuth]/options";
+import { AuthOptions } from "../auth/[...nextauth]/options";
 
 export async function GET(request: Request) {
   await dbConnect();
@@ -48,7 +48,7 @@ export async function GET(request: Request) {
       { status: 200 }
     );
   } catch (error) {
-    console.log('error in getting the messages' ,error);
+    console.log("error in getting the messages", error);
     return Response.json(
       {
         success: false,
