@@ -3,7 +3,8 @@ import userModel from "@/model/User";
 import {z} from 'zod';
 
 
-export default async function POST(request : Request){
+export async function POST(request : Request){
+    console.log('in the verify-code codebase')
     await dbConnect();
 
     try {

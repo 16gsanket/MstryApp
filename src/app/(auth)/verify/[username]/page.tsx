@@ -25,11 +25,14 @@ function VerifyAccount() {
   const params = useParams();
 
   const onSubmit = async (data: z.infer<typeof verifySchema>) => {
+    console.log(data);
     try {
       const response = axios.post("/api/verify-code", {
         username: params.username,
         code: data.code,
       });
+
+      console.log(response)
 
       toast("Account Verified Successfully");
       router.replace("sign-in");

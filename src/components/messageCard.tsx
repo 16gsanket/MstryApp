@@ -29,7 +29,7 @@ type MessageProps = {
     onMessageDelete : () => void
 }
 
-function messageCard({message , onMessageDelete} : MessageProps) {
+function MessageCard({message , onMessageDelete} : MessageProps) {
 
     const handleDeleteConfirm = async() =>{
         try {
@@ -71,4 +71,4 @@ function messageCard({message , onMessageDelete} : MessageProps) {
   );
 }
 
-export default messageCard;
+export default MessageCard;
